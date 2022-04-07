@@ -69,7 +69,7 @@ void enlarge(HashMap * map) {
 
     //Crear un mapa Auxiliar.
     int newCapac = (int) map->capacity * 2;
-    map * auxMap = createMap(newCapac);
+    HashMap * auxMap = createMap(newCapac);
 
 }
 

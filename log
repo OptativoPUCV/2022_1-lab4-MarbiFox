@@ -656,3 +656,14 @@ hashmap.c:72:11: error: ‘auxMap’ undeclared (first use in this function); di
 hashmap.c:72:11: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 55c0a35
+Thu Apr  7 16:07:04 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
+     HashMap * auxMap = createMap(newCapac);
+               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7cd020d

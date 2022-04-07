@@ -58,6 +58,11 @@ void insertMap(HashMap * map, char * key, void * value) {
           }
         }
     }
+
+    //Verificar si hay espacio
+    if (map->size == map->capacity) {
+      enlarge(map);
+    }
   
     //Colocar el elemento aux en el arreglo
     map->buckets[pos] = aux;

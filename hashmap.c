@@ -59,7 +59,7 @@ void enlarge(HashMap * map) {
 
 HashMap * createMap(long capacity) {
     //Reservar Memoria.
-    HashMap * newMap = (HashMap *) malloc (sizeof(HashMap);
+    HashMap * newMap = (HashMap *) malloc (sizeof(HashMap));
 
     //Definir capacidad
     newMap->capacity = capacity;

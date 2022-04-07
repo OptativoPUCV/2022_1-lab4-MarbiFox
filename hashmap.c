@@ -50,6 +50,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     //Verificar si la casilla está ocupada.
     if(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
       //Recorrer el arreglo en busca de una casilla nula.
+      if (is_equal(key, map->buckets[pos]->key) == 1) return;
       for (int i = pos; i < map->capacity; i++)
         {
           if(map->buckets[i] == NULL) {

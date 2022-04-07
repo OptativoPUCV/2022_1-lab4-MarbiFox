@@ -71,6 +71,8 @@ void enlarge(HashMap * map) {
     int newCapac = (int) map->capacity * 2;
     HashMap * auxMap = createMap(newCapac);
 
+    //Insertar los elementos del mapa anterior en el nuevo.
+    
 }
 
 
@@ -90,8 +92,18 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
+    //Buscar la clave a borrar.
+    long clave = hash(key, map->capacity);
 
-
+    //Comprobar que la clave está ocupada por el mismo dato.
+    if (is_equal(key, map->buckets[clave]->key) != 1) {
+      
+    }
+    else {
+      //Eliminar directamente (Borrar Clave)
+      map->buckets[clave]->key = NULL;
+    }
+    
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   

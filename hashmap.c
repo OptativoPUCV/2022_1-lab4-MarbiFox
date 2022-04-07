@@ -58,12 +58,15 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
+    
     HashMap * newMap = (HashMap *) malloc (sizeof(HashMap);
-    //Definir capacidad
-    newMap->capacity = capacity;
+    
     //Crear Arreglo de Pairs.
     Pair ** buckets = (Pair **) malloc (capacity*sizeof(Pair*));
     newMap->buckets = buckets;
+  
+    //Definir capacidad
+    newMap->capacity = capacity;
     //Asignar 0 a los valores iniciales.
     newMap->current = 0;
     newMap->size = 0;

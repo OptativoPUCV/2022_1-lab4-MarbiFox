@@ -40,8 +40,14 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
-
+    //Sacar la posición del arreglo
+    int pos = hash(key, map->capacity);
+    //Declarar variable aux
+    Pair * aux = (Pair *) malloc (sizeof(Pair));
+    aux = createPair(key, value);
+    //Colocar el elemento aux en el arreglo
+    map->buckets[pos] = aux;
+    map->size++;
 }
 
 void enlarge(HashMap * map) {

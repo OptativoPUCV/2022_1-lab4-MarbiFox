@@ -62,8 +62,8 @@ HashMap * createMap(long capacity) {
     //Definir capacidad
     newMap->capacity = capacity;
     //Crear Arreglo de Pairs.
-    Pair ** hashElem = (Pair **) malloc (capacity * sizeof(Pair*));
-    newMap->buckets = hashElem;
+    Pair ** buckets = (Pair **) malloc (capacity * sizeof(Pair*));
+    newMap->buckets = buckets;
     //Asignar 0 a los valores iniciales.
     newMap->current = 0;
     newMap->size = 0;

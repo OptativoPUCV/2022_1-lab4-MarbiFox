@@ -60,13 +60,13 @@ void enlarge(HashMap * map) {
 HashMap * createMap(long capacity) {
     //Reservar Memoria.
     HashMap * newMap = (HashMap *) malloc (sizeof(HashMap);
-    
+
+    //Definir capacidad
+    newMap->capacity = capacity;
+  
     //Crear Arreglo de Pairs.
     Pair ** hashElem = (Pair**) calloc (sizeof(Pair*),capacity);
     newMap->buckets = hashElem;
-  
-    //Definir capacidad
-    newMap->capacity = capacity;
   
     //Asignar 0 a los valores iniciales.
     newMap->current = -1;

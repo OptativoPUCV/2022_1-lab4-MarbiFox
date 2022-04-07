@@ -48,16 +48,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     aux = createPair(key, value);
     
     //Verificar si la casilla está ocupada.
-    if(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
+    while(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
       //Recorrer el arreglo en busca de una casilla nula.
       if (is_equal(key, map->buckets[pos]->key) == 1) return;
-      for (int i = pos; i < map->capacity; i++)
-        {
-          if(map->buckets[i] == NULL) {
-            map->buckets[i] = aux;
-            map->size++;
-          }
-        }
+      pos = (pos+1) % map->capacity;
     }
 
     //Verificar si hay espacio

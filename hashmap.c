@@ -42,12 +42,30 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
     //Sacar la posición del arreglo
     int pos = hash(key, map->capacity);
+
     //Declarar variable aux
     Pair * aux = (Pair *) malloc (sizeof(Pair));
     aux = createPair(key, value);
+    
+    //Verificar si la casilla está ocupada.
+    if(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
+      //Recorrer el arreglo en busca de una casilla nula.
+      for (int i = pos; i < map->capacity; i++)
+        {
+          if(map->buckets[i] == NULL) {
+            map->buckets[i] = aux;
+            map->size++;
+          }
+        }
+    }
+  
     //Colocar el elemento aux en el arreglo
     map->buckets[pos] = aux;
     map->size++;
+
+
+
+  
 }
 
 void enlarge(HashMap * map) {
@@ -60,18 +78,15 @@ void enlarge(HashMap * map) {
 HashMap * createMap(long capacity) {
     //Reservar Memoria.
     HashMap * newMap = (HashMap *) malloc (sizeof(HashMap));
-
     //Definir capacidad
     newMap->capacity = capacity;
-  
     //Crear Arreglo de Pairs.
     Pair ** hashElem = (Pair**) malloc (capacity*sizeof(Pair*));
     newMap->buckets = hashElem;
-  
     //Asignar 0 a los valores iniciales.
     newMap->current = -1;
     newMap->size = 0;
-
+    //Retornar el Mapa.
     return newMap;
 }
 

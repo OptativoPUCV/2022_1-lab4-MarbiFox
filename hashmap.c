@@ -62,15 +62,14 @@ void insertMap(HashMap * map, char * key, void * value) {
     //Colocar el elemento aux en el arreglo
     map->buckets[pos] = aux;
     map->size++;
-
-
-
-  
 }
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
+    //Crear un mapa Auxiliar.
+    int newCapac = (int) map->capacity * 2;
+    map * auxMap = createMap(newCapac);
 
 }
 

@@ -644,3 +644,15 @@ Thu Apr  7 16:01:53 UTC 2022:
  tests:  5|4
 total_score: 30/70
 84c533a
+Thu Apr  7 16:06:36 UTC 2022: 
+ hashmap.c | 3 +++
+ 1 file changed, 3 insertions(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:11: error: ‘auxMap’ undeclared (first use in this function); did you mean ‘nextMap’?
+     map * auxMap = createMap(newCapac);
+           ^~~~~~
+           nextMap
+hashmap.c:72:11: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+55c0a35

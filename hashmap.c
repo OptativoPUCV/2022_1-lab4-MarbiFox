@@ -88,11 +88,6 @@ void enlarge(HashMap * map) {
       {
         insertMap(map, auxBuckets[i]->key, auxBuckets[i]->value);
       }
-
-    
-    /*Crear un mapa Auxiliar.
-    int newCapac = (int) map->capacity * 2;
-    HashMap * auxMap = createMap(newCapac);*/
   }
 
 

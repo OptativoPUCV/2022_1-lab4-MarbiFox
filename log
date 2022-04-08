@@ -722,3 +722,29 @@ hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 0949396
+Fri Apr  8 21:31:55 UTC 2022: 
+ hashmap.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
+     HashMap * auxMap = createMap(newCapac);
+               ^~~~~~
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:106:18: error: ‘clave’ undeclared (first use in this function)
+     map->buckets[clave]->key = NULL;
+                  ^~~~~
+hashmap.c:106:18: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c: In function ‘searchMap’:
+hashmap.c:116:55: error: ‘return’ with no value, in function returning non-void [-Werror]
+       if (is_equal(key, map->buckets[pos]->key) == 1) return;
+                                                       ^~~~~~
+hashmap.c:109:8: note: declared here
+ Pair * searchMap(HashMap * map,  char * key) {
+        ^~~~~~~~~
+hashmap.c:120:25: error: ‘clave’ undeclared (first use in this function)
+     return map->buckets[clave];
+                         ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b18081b

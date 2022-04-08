@@ -93,11 +93,13 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
     //Buscar la clave a borrar.
-    long clave = hash(key, map->capacity);
+    long pos = hash(key, map->capacity);
 
     //Verificar si la casilla está ocupada.
-    while((is_equal(key, map->buckets[clave]->key) != 1)) {
-      clave = (clave+1) % map->capacity;
+    while(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
+      //Recorrer el arreglo en busca de una casilla nula.
+      if (is_equal(key, map->buckets[pos]->key) == 1) return;
+      pos = (pos+1) % map->capacity;
     }
 
     //Eliminar directamente (Borrar Clave)
@@ -106,11 +108,13 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {   
     //Buscar la clave a borrar.
-    long clave = hash(key, map->capacity);
+    long pos = hash(key, map->capacity);
 
     //Verificar si la casilla está ocupada.
-    while((is_equal(key, map->buckets[clave]->key) != 1)) {
-      clave = (clave+1) % map->capacity;
+    while(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
+      //Recorrer el arreglo en busca de una casilla nula.
+      if (is_equal(key, map->buckets[pos]->key) == 1) return;
+      pos = (pos+1) % map->capacity;
     }
 
     return map->buckets[clave];

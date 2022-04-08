@@ -748,3 +748,14 @@ hashmap.c:120:25: error: ‘clave’ undeclared (first use in this function)
 cc1: all warnings being treated as errors
 Compilation failed
 b18081b
+Fri Apr  8 21:32:27 UTC 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
+     HashMap * auxMap = createMap(newCapac);
+               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0ff1922

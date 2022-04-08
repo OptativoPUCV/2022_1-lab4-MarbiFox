@@ -103,7 +103,7 @@ void eraseMap(HashMap * map,  char * key) {
     }
 
     //Eliminar directamente (Borrar Clave)
-    map->buckets[clave]->key = NULL;
+    map->buckets[pos]->key = NULL;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
@@ -113,11 +113,11 @@ Pair * searchMap(HashMap * map,  char * key) {
     //Verificar si la casilla está ocupada.
     while(map->buckets[pos] != NULL && map->buckets[pos]->key != key) {
       //Recorrer el arreglo en busca de una casilla nula.
-      if (is_equal(key, map->buckets[pos]->key) == 1) return;
+      if (is_equal(key, map->buckets[pos]->key) == 1) return map->buckets[pos];
       pos = (pos+1) % map->capacity;
     }
 
-    return map->buckets[clave];
+    return map->buckets[pos];
 }
 
 Pair * firstMap(HashMap * map) {

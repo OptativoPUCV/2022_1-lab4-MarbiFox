@@ -127,7 +127,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     long pos = hash(key, map->capacity);
 
     //Verificar si la casilla está ocupada.
-    while(is_equal(key, map->buckets[pos]->key) != 1) {
+    while(map->buckets[pos]->key != NULL) {
       //Recorrer el arreglo en busca de la clave.
       if (map->buckets[pos]->key == NULL) return NULL;
       pos = (pos+1) % map->capacity;

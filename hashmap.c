@@ -147,6 +147,7 @@ Pair * firstMap(HashMap * map) {
         if (map->buckets[i]->key != NULL){
           Pair * first = (Pair *)malloc(sizeof(Pair));
           first = map->buckets[i];
+          map->current = i;
           return first;
         }
       }

@@ -100,7 +100,7 @@ HashMap * createMap(long capacity) {
     Pair ** hashElem = (Pair**) malloc (capacity*sizeof(Pair*));
     newMap->buckets = hashElem;
     //Asignar 0 a los valores iniciales.
-    newMap->current = 0;
+    newMap->current = -1;
     newMap->size = 0;
     //Retornar el Mapa.
     return newMap;

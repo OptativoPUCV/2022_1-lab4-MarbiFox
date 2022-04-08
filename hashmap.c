@@ -67,13 +67,33 @@ void insertMap(HashMap * map, char * key, void * value) {
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
 
-    //Crear un mapa Auxiliar.
-    int newCapac = (int) map->capacity * 2;
-    HashMap * auxMap = createMap(newCapac);
+    //Variable auxiliar para mantener el arreglo anterior
+    Pair ** auxBuckets = (Pair**) malloc (sizeof(Pair*));
+    int oldSize = map->size;
 
-    //Insertar los elementos del mapa anterior en el nuevo.
+    //Aumentar Capacidad
+    map->capacity *= 2;
+
+    //Guardar el arreglo anterior en la variable auxiliar.
+    auxBuckets = map->buckets;
+
+    //Crear un arreglo nuevo para el mapa
+    map->buckets = (Pair**) malloc (map->capacity * sizeof(Pair*));
+
+    //Inicializar nuevamente el size.
+    map->size = 0;
+
+    //Insertar los elementos en el nuevo arreglo.
+    for (int i = 0; i < oldSize; i++)
+      {
+        insertMap(map, auxBuckets[i]->key, auxBuckets[i]->value);
+      }
+
     
-}
+    /*Crear un mapa Auxiliar.
+    int newCapac = (int) map->capacity * 2;
+    HashMap * auxMap = createMap(newCapac);*/
+  }
 
 
 HashMap * createMap(long capacity) {

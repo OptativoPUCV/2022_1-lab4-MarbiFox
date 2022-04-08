@@ -96,9 +96,7 @@ void eraseMap(HashMap * map,  char * key) {
     long clave = hash(key, map->capacity);
 
     //Verificar si la casilla está ocupada.
-    while(map->buckets[clave] != NULL && map->buckets[clave]->key != key) {
-      //Recorrer el arreglo en busca de una casilla nula.
-      if (is_equal(key, map->buckets[clave]->key) == 1) break;
+    while((is_equal(key, map->buckets[clave]->key) != 1)) {
       clave = (clave+1) % map->capacity;
     }
 

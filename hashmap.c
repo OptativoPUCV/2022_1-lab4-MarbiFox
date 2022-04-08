@@ -121,7 +121,16 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
+    //Buscar el primer bucket válido.
+    for (int i = 0; i < map->capacity; i++)
+      {
+        if (map->buckets[i]->key != NULL){
+          Pair * first = (Pair *)malloc(sizeof(Pair));
+          first = map->buckets[i];
+          return first;
+        }
+      }
+  
     return NULL;
 }
 

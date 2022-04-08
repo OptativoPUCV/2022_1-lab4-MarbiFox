@@ -803,3 +803,14 @@ hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 2f3c946
+Fri Apr  8 21:48:31 UTC 2022: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:15: error: unused variable ‘auxMap’ [-Werror=unused-variable]
+     HashMap * auxMap = createMap(newCapac);
+               ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+f284040

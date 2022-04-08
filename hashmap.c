@@ -85,7 +85,7 @@ HashMap * createMap(long capacity) {
     Pair ** hashElem = (Pair**) malloc (capacity*sizeof(Pair*));
     newMap->buckets = hashElem;
     //Asignar 0 a los valores iniciales.
-    newMap->current = -1;
+    newMap->current = 0;
     newMap->size = 0;
     //Retornar el Mapa.
     return newMap;
@@ -131,7 +131,7 @@ Pair * firstMap(HashMap * map) {
         }
       }
   
-    return 0;
+    return NULL;
 }
 
 Pair * nextMap(HashMap * map) {

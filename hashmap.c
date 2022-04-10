@@ -75,10 +75,9 @@ void enlarge(HashMap * map) {
     map->capacity *= 2;
 
     //Guardar el arreglo anterior en la variable auxiliar.
-    for (int i = 0; i < oldSize; i++)
-      {
+    for (int i = 0; i < oldSize; i++) {
         auxBuckets[i] = map->buckets[i];
-      } 
+    }
 
     //Crear un arreglo nuevo para el mapa
     map->buckets = (Pair**) malloc (map->capacity * sizeof(Pair*));

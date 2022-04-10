@@ -172,14 +172,17 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     //En caso de no haber colocado el current en la primera casilla, colocarlo.
-    //if (map->current < 0) map->current = 0;
+    if (map->current < 0) map->current = 0;
 
+    //Crear una variable para la posición next.
+    int nextPos = map->current;
+  
     //Buscar la siguiente clave válida.
-    while (1) {
-      if (map->buckets[map->current] != NULL && map->buckets[map->current]->key != NULL) break;
-      map->current++;
+    while (nextPos < map->capacity) {
+      if (map->buckets[nextPos]) NULL && map->buckets[nextPos]->key != NULL) break;
+      nextPos++;
     }
 
     //Retornar el next
-    return map->buckets[map->current];
+    return map->buckets[nextPos];
 }

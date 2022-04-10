@@ -1028,3 +1028,14 @@ Sun Apr 10 20:07:03 UTC 2022:
  tests:  14|1
 total_score: 60/70
 1d83ab7
+Sun Apr 10 20:15:41 UTC 2022: 
+ hashmap.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:182:76: error: expected ‘;’ before ‘)’ token
+       if (map->buckets[nextPos]) NULL && map->buckets[nextPos]->key != NULL) break;
+                                                                            ^
+hashmap.c:182:76: error: expected statement before ‘)’ token
+Compilation failed
+523f137

@@ -179,8 +179,8 @@ Pair * nextMap(HashMap * map) {
   
     //Buscar la siguiente clave válida.
     while (nextPos < map->capacity) {
-      if (map->buckets[nextPos]->key != NULL) break;
       nextPos++;
+      if (map->buckets[nextPos]->key != NULL) break;
     }
 
     //Retornar el next

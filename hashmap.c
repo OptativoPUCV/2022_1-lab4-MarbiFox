@@ -87,7 +87,7 @@ void enlarge(HashMap * map) {
     map->size = 0;
 
     //Insertar los elementos en el nuevo arreglo.
-    for (int i = 0; i < oldSize; i++)
+    for (map->size = 0; map->size < oldSize; map->size++)
       {
         insertMap(map, auxBuckets[i]->key, auxBuckets[i]->value);
       }

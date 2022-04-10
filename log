@@ -939,3 +939,14 @@ Sun Apr 10 19:42:56 UTC 2022:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 13e1dfa
+Sun Apr 10 19:43:29 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:92:35: error: ‘i’ undeclared (first use in this function)
+         insertMap(map, auxBuckets[i]->key, auxBuckets[i]->value);
+                                   ^
+hashmap.c:92:35: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+d647e75

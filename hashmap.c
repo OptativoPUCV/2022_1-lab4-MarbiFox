@@ -175,7 +175,8 @@ Pair * nextMap(HashMap * map) {
     if (map->current < 0) map->current = 0;
 
     //Buscar la siguiente clave válida.
-    while (map->buckets[map->current]->key == NULL) {
+    while (1) {
+      if (map->buckets[map->current] != NULL && map->buckets[map->current]->key != NULL) break;
       map->current++;
     }
 

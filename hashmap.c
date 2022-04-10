@@ -183,6 +183,9 @@ Pair * nextMap(HashMap * map) {
       if (map->buckets[nextPos] != NULL && map->buckets[nextPos]->key != NULL) break;
     }
 
-    //Retornar el next
+    //Actulizar el current.
+    map->current = nextPos;
+    
+    //Retornar el next.
     return map->buckets[nextPos];
 }

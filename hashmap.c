@@ -171,8 +171,14 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    //Recorrer el arreglo.
+    //En caso de no haber colocado el current en la primera casilla, colocarlo.
     if (map->current < 0) map->current = 0;
-    map->current++;
+
+    //Buscar la siguiente clave válida.
+    while (map->buckets[map->current]->key == NULL) {
+      map->current++;
+    }
+
+    //Retornar el next
     return map->buckets[map->current];
 }

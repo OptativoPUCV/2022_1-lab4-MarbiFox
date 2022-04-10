@@ -136,13 +136,14 @@ Pair * searchMap(HashMap * map,  char * key) {
     //Verificar si la casilla existe.
     if (map->buckets[pos]->key == NULL) return NULL;
     
-    //Verificar si la casilla está ocupada.
+    //Recorrer el arreglo en busca de la clave.
     while(map->buckets[pos] != NULL) {
-      //Recorrer el arreglo en busca de la clave.
+      //Si las claves coinciden, eliminar el dato.
       if (is_equal(key, map->buckets[pos]->key) == 1) {
         map->current = pos;
         return map->buckets[pos];
       }
+      //Si no, seguir recorriendo.
       pos = (pos+1) % map->capacity;
     }
     

@@ -73,7 +73,7 @@ void enlarge(HashMap * map) {
     
 
     //Aumentar Capacidad
-    map->capacity *= 2;
+    map->capacity = 2 * map->capacity;
 
     //Guardar el arreglo anterior en la variable auxiliar.
     for (int i = 0; i < oldSize; i++) {
@@ -89,7 +89,7 @@ void enlarge(HashMap * map) {
     //Insertar los elementos en el nuevo arreglo.
     for (int i = 0; i < oldSize; i++)
       {
-        insertMap(map, auxBuckets[i]->key, auxBuckets[i]);
+        insertMap(map, auxBuckets[i]->key, auxBuckets[i]->value);
       }
   }
 

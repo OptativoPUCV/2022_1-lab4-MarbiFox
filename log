@@ -1039,3 +1039,21 @@ hashmap.c:182:76: error: expected ‘;’ before ‘)’ token
 hashmap.c:182:76: error: expected statement before ‘)’ token
 Compilation failed
 523f137
+Sun Apr 10 20:16:00 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:182:34: error: expected expression before ‘!=’ token
+       if (map->buckets[nextPos]) != NULL && map->buckets[nextPos]->key != NULL) break;
+                                  ^~
+hashmap.c:182:7: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+       if (map->buckets[nextPos]) != NULL && map->buckets[nextPos]->key != NULL) break;
+       ^~
+hashmap.c:182:79: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+       if (map->buckets[nextPos]) != NULL && map->buckets[nextPos]->key != NULL) break;
+                                                                               ^
+hashmap.c:182:79: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+fb361b9

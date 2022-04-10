@@ -126,8 +126,11 @@ Pair * searchMap(HashMap * map,  char * key) {
     //Buscar la clave a borrar.
     long pos = hash(key, map->capacity);
 
+    //Verificar si la casilla existe.
+    if (map->buckets[pos]->key == NULL) return NULL;
+    
     //Verificar si la casilla está ocupada.
-    while(map->buckets[pos]->key != NULL && is_equal(key, map->buckets[pos]->key) != 1) {
+    while(is_equal(key, map->buckets[pos]->key) != 1) {
       //Recorrer el arreglo en busca de la clave.
       if (map->buckets[pos]->key == NULL) return NULL;
       pos = (pos+1) % map->capacity;

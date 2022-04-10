@@ -158,7 +158,7 @@ Pair * firstMap(HashMap * map) {
     //Buscar el primer bucket válido.
     for (int i = 0; i < map->capacity; i++)
       {
-        if (map->buckets[i] != NULL){
+        if (map->buckets[i] != NULL) {
           Pair * first = (Pair *)malloc(sizeof(Pair));
           first = map->buckets[i];
           map->current = i;
@@ -170,6 +170,16 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-
+    //Buscar el último bucket válido.
+    for (int i = map->capacity; i > 0; i--)
+      {
+        if (map->buckets[i] != NULL) {
+          Pair * first = (Pair *)malloc(sizeof(Pair));
+          first = map->buckets[i];
+          map->current = i;
+          return first;
+        }
+      }
+  
     return NULL;
 }

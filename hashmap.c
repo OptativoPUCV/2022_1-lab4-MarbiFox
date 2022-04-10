@@ -172,7 +172,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     //En caso de no haber colocado el current en la primera casilla, colocarlo.
-    if (map->current < 0) map->current = 0;
+    //if (map->current < 0) map->current = 0;
 
     //Buscar la siguiente clave válida.
     while (1) {

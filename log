@@ -1074,3 +1074,9 @@ Sun Apr 10 20:17:34 UTC 2022:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 d82a6c5
+Sun Apr 10 20:18:10 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  15|1
+total_score: 60/70
+70fc0d7

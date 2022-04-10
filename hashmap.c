@@ -180,7 +180,7 @@ Pair * nextMap(HashMap * map) {
     //Buscar la siguiente clave válida.
     while (nextPos < map->capacity) {
       nextPos++;
-      if (map->buckets[nextPos]->key != NULL) break;
+      if (map->buckets[nextPos] != NULL && map->buckets[nextPos]->key != NULL) break;
     }
 
     //Retornar el next

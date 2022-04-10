@@ -166,20 +166,15 @@ Pair * firstMap(HashMap * map) {
         }
       }
   
+    //Si no encuentra nada, retornar NULL.
     return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
-    //Buscar el último bucket válido.
-    for (int i = map->capacity; i > 0; i--)
-      {
-        if (map->buckets[i] != NULL) {
-          Pair * last = (Pair *)malloc(sizeof(Pair));
-          last = map->buckets[i];
-          map->current = i;
-          return last;
-        }
-      }
-  
+    //Buscar el current bucket válido.
+    if (map->buckets[map->current+1] != NULL && map->buckets[map->current+1]->key != NULL) {
+      return map->buckets[map->current+1];
+    }
+    
     return NULL;
 }

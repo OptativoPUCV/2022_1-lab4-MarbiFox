@@ -172,7 +172,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
     //Recorrer el arreglo.
-    map->current++;
+    if (map->current < 0) map->current++;
     map->current++;
     return map->buckets[map->current];
 }

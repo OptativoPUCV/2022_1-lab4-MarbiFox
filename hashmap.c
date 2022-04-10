@@ -171,10 +171,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-    //Buscar el current bucket válido.
-    if (map->buckets[map->current+1] != NULL && map->buckets[map->current+1]->key != NULL) {
-      return map->buckets[map->current+1];
-    }
-    
-    return NULL;
+    //Recorrer el arreglo.
+    map->current++;
+    return map->buckets[map->current];
 }

@@ -68,8 +68,9 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     
     //Variable auxiliar para mantener el arreglo anterior
-    Pair ** auxBuckets = (Pair**) malloc (sizeof(Pair*));
     int oldSize = map->size;
+    Pair ** auxBuckets = (Pair**) malloc (oldSize * sizeof(Pair*));
+    
 
     //Aumentar Capacidad
     map->capacity *= 2;
